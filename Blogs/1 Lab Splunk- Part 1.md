@@ -9,7 +9,9 @@ Indexers- These are the next in the handling of the logs. Here we are basically 
 For example windows and linux application logs could be managed seperately using different index.
 They are basically responsible for processing the search queries from the search heads which we will be discussing now.
 Search Heads- These are basically the main application which we interact with where we provide the queries which is then passed to indexers to get the result of the query.
+
 ![](attachment/3713087196d7bd59b078d64e34dea8c0.png)
+
 There are more components in like the deployment but these are the main components when you dive deep into how to setup you own SIEM environment you will require them.
 **SPL** is the query language used by Splunk for the manipulation of data,searching data and filtering data.
 
@@ -48,7 +50,9 @@ Let us imagine a scenario for Unauthorized LSASS Dumping and C2 Callback Activit
 Note: This is a very basic lab for understanding the attacks in real you will be not be knowing exactly what happen you may just see some alerts in some SIEM solution 
 The timings need to be adjusted as to what you were reported that event
 For changing the timings 
+
 ![](attachment/d3dc2d7193ff180d49441c9508daf45c.png)
+
 You can just do by clicking on top right corner where it displays last 24hrs
 1 Firstly we are provided lsass so we are possibly looking at some credential dumping scenerio and maybe also connection establish using C2 server but we need to investigate basically what could have happened.
 2 First of all we know there is some unexpected activity involving so let's start with that .
@@ -62,7 +66,10 @@ Now for the stats argument we are basically using a statistics function to count
 For the part of index=* and sourcetype i have already explained it earlier in this blog.
 
 So we should now basically look for some suspicious processes which are initializing the service lsass.exe .
-![](attachment/259dc94334ae7144b1923be0b088829c.png)
+
+![](attachment/
+259dc94334ae7144b1923be0b088829c.png)
+
 here we are basically seeing rundll32 basically appearing twice this leads to some suspicion why this service is calling the process two times
 4 Upon some googling we find that 
 `rundll32.exe` is **frequently abused** in LSASS dumping attacks via LOLbins
@@ -74,9 +81,13 @@ index=* sourcetype="WinEventLog:Sysmon" EventCode=10 SourceImage="C:\\Windows\\S
 ```
 Now what this query is doing is almost same as earlier but we have changed the parent process in the query parameter SourceImage as rundll32 so we can see what processes rundll32 has executed and the purpose of having Calltrace is getting info about what were the dlls called for the execution
 6 This is the info we have about these now .
+
 ![](attachment/c6756993bd59f665d0f21ebe771619fe.png)
+
 Upon analyzing the calltrace we see that 
+
 ![](attachment/a104a1558467e205f5a5c3a741647aca.png) 
+
 of all the dlls one dll is quite a common surface of living off the land binaries attacking method even though it itself is legitimate process it is used for dumping the memory of another process.
 So now the compromise is quite high 
 7 Now we have a hint of process we will now proceed on to check for the running of some malicious powershell scripts in the system.
@@ -86,7 +97,9 @@ index="main" EventCode=7 ImageLoaded="*clr.dll"
 | stats count by Image
 ```
 Got the process here
+
 ![](attachment/0d90419ee654054fc10396dfdd6f00ae.png)
+
 Now we have successful indications that the malware was able to get into our system our one of system of our organization.
 8 Now what we should be looking is something like C2 communication as we have some malware our system that just was just using lsass.exe for credential dumping so it must be trying to connect to some remote server for the communication or even worse action like trying to get some rce .
 9 Now we will be looking closely at the time frame of the attack and basically trying to see the traffic within that time for any C 2 indications
@@ -98,7 +111,10 @@ We can utilize this query for getting our sysmon logs for network activities
 and we are printing statistics counted by sourceIP,DestIP and Image
 Here of all the processes the notepad is suspicious rest all was normal traffic
 So basically the obfuscated powershell script was basically utlilizing notepad for the C2 communication 
-![](attachment/e7fb590fabef49373369e2e957a5c35f.png)
+
+![](attachment/
+e7fb590fabef49373369e2e957a5c35f.png)
+
 Now since we have investigated events
 Our possible next steps
 1 Blocklisting the IPs
