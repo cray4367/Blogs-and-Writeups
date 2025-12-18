@@ -67,8 +67,7 @@ For the part of index=* and sourcetype i have already explained it earlier in th
 
 So we should now basically look for some suspicious processes which are initializing the service lsass.exe .
 
-![](attachment/
-259dc94334ae7144b1923be0b088829c.png)
+![](attachment/259dc94334ae7144b1923be0b088829c.png)
 
 here we are basically seeing rundll32 basically appearing twice this leads to some suspicion why this service is calling the process two times
 4 Upon some googling we find that 
@@ -112,8 +111,7 @@ and we are printing statistics counted by sourceIP,DestIP and Image
 Here of all the processes the notepad is suspicious rest all was normal traffic
 So basically the obfuscated powershell script was basically utlilizing notepad for the C2 communication 
 
-![](attachment/
-e7fb590fabef49373369e2e957a5c35f.png)
+![](attachment/e7fb590fabef49373369e2e957a5c35f.png)
 
 Now since we have investigated events
 Our possible next steps
