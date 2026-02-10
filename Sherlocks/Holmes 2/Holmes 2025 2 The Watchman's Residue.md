@@ -10,18 +10,18 @@ The challenge description is
 `With help from D.I. Lestrade, Holmes acquires logs from a compromised MSP connected to the city’s financial core. The MSP’s AI helpdesk bot looks to have been manipulated into leaking remote access keys - an old trick of Moriarty’s.`
 
 We will be beginning our investigation by looking at the pcap file 
-1 What was the IP address of the decommissioned machine used by the attacker to start a chat session with MSP-HELPDESK-AI?
+1. What was the IP address of the decommissioned machine used by the attacker to start a chat session with MSP-HELPDESK-AI?
 
 If we search for helpdesk in wireshark and basically check the conversations for the connections that are being made to the chatbot 
 ![](attachment/5f777eed08065d2d67215385ae551310.png)
 We basically see some unusual traffic from the IP address 10.0.69.45 so this is possibly our attacker IP
 10.0.69.45
-2 What was the hostname of the decommissioned machine?
+2. What was the hostname of the decommissioned machine?
 Now we are required to find the hostname of the decommissioned machine
 If we apply a filter for this IP address we can basically see that the name being resolved just at the top which i possible our hostname 
 ![](attachment/e23b3403c6128ccbe18c9b5bdfc6508e.png)
 Hostname:WATSON-ALPHA-2
-3 What was the first message the attacker sent to the AI chatbot? 
+3. What was the first message the attacker sent to the AI chatbot? 
 Now we have the IP of the attacker and we know by analysing the protocol hierarchy and the request that the chatbot messages are being sent in http so we can check them in wireshark
 With the first request the message api of the chatbot we find this 
 ![](attachment/776e644406d4cb327856a25e4d411598.png)
