@@ -140,9 +140,11 @@ Now we can basically crack it using rockyou wordlist and basically wait for pass
 ![](attachment/5199235fccbe92637f2ec9a81b498c7d.png)
 So basically our password is cutiepie14
 Now we can use it open the keepass file
+
 ![](attachment/45b852eb6cee98291d3a16e345418ad6.png)
 
 The first entry is what we require 
+
 ![](attachment/335b3a1d72b4efffbb07be0acf4d585a.png)
 
 So our answer is Werni:Quantum1!
