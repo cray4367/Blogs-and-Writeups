@@ -5,7 +5,7 @@ Initially when we download the challenge file we are basically provided:
 3 A pcap file for the network traffic
 
 The challenge description is 
-#### Sherlock Scenario
+### Sherlock Scenario
 
 `With help from D.I. Lestrade, Holmes acquires logs from a compromised MSP connected to the city’s financial core. The MSP’s AI helpdesk bot looks to have been manipulated into leaking remote access keys - an old trick of Moriarty’s.`
 
