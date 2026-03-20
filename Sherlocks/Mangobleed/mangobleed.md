@@ -1,12 +1,4 @@
-<div>
 
-# MangoBleed HTB Walkthrough {#mangobleed-htb-walkthrough .p-name}
-
-
-
-This is basically a overview of the hackthebox sherlock mangobleed.
-
-------------------------------------------------------------------------
 
 ### MangoBleed HTB Walkthrough 
 
