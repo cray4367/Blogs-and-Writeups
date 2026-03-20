@@ -2,36 +2,19 @@
 
 # MangoBleed HTB Walkthrough {#mangobleed-htb-walkthrough .p-name}
 
-</div>
 
-::: {.section .p-summary field="subtitle"}
-This is basically a overview of the hackthebox sherlock mangobleed.
-:::
-
-::::::::::::::::: {.section .e-content field="body"}
-:::::: {#6810 .section .section .section--body .section--first}
-::: section-divider
-
-------------------------------------------------------------------------
-:::
-
-:::: section-content
-::: {.section-inner .sectionLayout--insetColumn}
-### MangoBleed HTB Walkthrough {#a1f0 .graf .graf--h3 .graf--leading .graf--title name="a1f0"}
 
 This is basically a overview of the hackthebox sherlock mangobleed.
-:::
-::::
-::::::
-
-:::::: {#e137 .section .section .section--body}
-::: section-divider
 
 ------------------------------------------------------------------------
-:::
 
-:::: section-content
-::: {.section-inner .sectionLayout--insetColumn}
+### MangoBleed HTB Walkthrough 
+
+This is basically a overview of the hackthebox sherlock mangobleed.
+
+
+------------------------------------------------------------------------
+
 Challenge Description
 
 You were contacted early this morning to handle a high‑priority incident
@@ -48,18 +31,10 @@ determine whether the system has been compromised, identify any attacker
 activity (initial access, persistence, privilege escalation, lateral
 movement, or data access/exfiltration), and summarize your findings with
 an initial incident assessment and recommended next steps.
-:::
-::::
-::::::
 
-:::::::: {#7c13 .section .section .section--body .section--last}
-::: section-divider
 
 ------------------------------------------------------------------------
-:::
 
-:::::: section-content
-::: {.section-inner .sectionLayout--insetColumn}
 Now we will be going through the investigation regarding the challenge
 
 1 What is the CVE ID designated to the MongoDB vulnerability explained
@@ -157,7 +132,7 @@ cat auth.log| grep "65.0.76.43"
 Now basically go through the logs and check for for some access
 :::
 
-::: {.section-inner .sectionLayout--outsetColumn}
+
 <figure id="e584"
 class="graf graf--figure graf--layoutOutsetCenter graf-after--p">
 <img
@@ -167,7 +142,6 @@ data-width="1918" data-height="451" />
 </figure>
 :::
 
-::: {.section-inner .sectionLayout--insetColumn}
 Here the attacker successfully gained access to the system
 
 Time:2025--12--29 05:40:03
@@ -218,15 +192,4 @@ attacker is constantly going towards the mongodb folder in
 /var/lib/mongodb/
 
 Answer:/var/lib/mongodb
-:::
-::::::
-::::::::
-:::::::::::::::::
 
-By [Cray Cray](https://medium.com/@craycray13){.p-author .h-card} on
-[January 9, 2026](https://medium.com/p/b03f9d495e5d).
-
-[Canonical
-link](https://medium.com/@craycray13/mangobleed-htb-walkthrough-b03f9d495e5d){.p-canonical}
-
-Exported from [Medium](https://medium.com) on February 24, 2026.
