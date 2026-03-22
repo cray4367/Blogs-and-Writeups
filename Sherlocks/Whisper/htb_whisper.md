@@ -2,24 +2,11 @@
 
 # HTB Whisper Walkthrough {#htb-whisper-walkthrough .p-name}
 
-</div>
-
-::: {.section .p-summary field="subtitle"}
 This is whisper sherlock walkthrough on hackthebox
 :::
-
-::::::::::: {.section .e-content field="body"}
-:::::: {#3729 .section .section .section--body .section--first}
-::: section-divider
 
 ------------------------------------------------------------------------
-:::
 
-:::: section-content
-::: {.section-inner .sectionLayout--insetColumn}
-### HTB Whisper Walkthrough {#c5af .graf .graf--h3 .graf--leading .graf--title name="c5af"}
-
-This is whisper sherlock walkthrough on hackthebox
 
 Scenerio:The SOC team received an alert on 21st January 2025 about
 suspicious activity originating from an employee's system (Alpha). Alpha
@@ -34,17 +21,11 @@ the source of origin of the cyber attack
 
 We are basically provided with a forensic disk image of the system
 :::
-::::
-::::::
-
-:::::: {#3972 .section .section .section--body .section--last}
-::: section-divider
+:
 
 ------------------------------------------------------------------------
 :::
 
-:::: section-content
-::: {.section-inner .sectionLayout--insetColumn}
 Let's start with the walkthrough
 
 1 What is the hostname of the company computer involved in the
@@ -71,8 +52,7 @@ data-width="1086" data-height="375" data-is-featured="true" />
 2 What is the IP address associated with the machine?
 
 For this question check
-`HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces`{.markup--code
-.markup--p-code}
+`HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces` 
 
 Here we can find the Dhcpid address which is our required address
 
@@ -93,9 +73,7 @@ location
 C:\\Windows\\System32\\config
 
 Now we will basically navigate to
-`HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\ProfileList`{.markup--code
-.markup--p-code}
-
+`HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\ProfileList`
 <figure id="72ff" class="graf graf--figure graf-after--p">
 <img
 src="https://cdn-images-1.medium.com/max/800/1*-orvc73E10XJaW8Mdcy9YA.png"
@@ -454,7 +432,7 @@ Since i have already cracked the hash i used --- show it again
 For cracking just save 58a478135a93ac3bf058a5ea0e8fdb71 in a txt file
 or .hash and run hashcat as follows:
 
-``` {#8cfe .graf .graf--pre .graf-after--p .graf--preV2 code-block-mode="1" spellcheck="false" code-block-lang="bash"}
+``` 
  hashcat -m 1000 whisper_admin.txt ../../../Wordlist/rockyou.txt                                                                                                                    255 ↵
 ```
 
@@ -466,14 +444,5 @@ Answer:Password123
 
 Congrats the whisper sherlock has been successfully solved :)
 :::
-::::
-::::::
-:::::::::::
-
-By [Cray Cray](https://medium.com/@craycray13){.p-author .h-card} on
-[January 13, 2026](https://medium.com/p/ef85d33bb6cf).
-
-[Canonical
-link](https://medium.com/@craycray13/htb-whisper-walkthrough-ef85d33bb6cf){.p-canonical}
 
 Exported from [Medium](https://medium.com) on February 24, 2026.
