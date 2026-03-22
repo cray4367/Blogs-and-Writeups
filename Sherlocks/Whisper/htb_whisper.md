@@ -3,7 +3,7 @@
 # HTB Whisper Walkthrough {#htb-whisper-walkthrough .p-name}
 
 This is whisper sherlock walkthrough on hackthebox
-:::
+
 
 ------------------------------------------------------------------------
 
@@ -20,11 +20,10 @@ January date being provided and other being a user name Alpha which was
 the source of origin of the cyber attack
 
 We are basically provided with a forensic disk image of the system
-:::
-:
+
 
 ------------------------------------------------------------------------
-:::
+
 
 Let's start with the walkthrough
 
@@ -37,8 +36,7 @@ C:\\Windows\\System32\\config directory
 
 Now for specifically finding the computer hostname we will be checking
 the
-`HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\ComputerName\ComputerName`{.markup--code
-.markup--p-code}
+`HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\ComputerName\ComputerName`
 
 Here we can find the computername
 
